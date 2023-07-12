@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section style="padding-top: 15px; text-align: center;">
+    <div>
+        <h1 style="color: aqua; font-size: 35px; padding-top: 15px;"> Checking a number is Even or Odd </h1>
+    </div>
+    </br>
+    <form method="post">
+        {% csrf_token %}
+            <article style="margin-right: 1000px;">
+                <label> <b> Enter No </b> &nbsp; </label>
+                <input type="text" name="num1" value="{{n1}}">
+                </br></br>
+                <button style="width: 170px; background: gold; margin-left: 75px;"> Click Here </button>
+                </br></br>
+                <label> <b> Output </b> &emsp; </label>
+                <input type="text" value="{{res}}">
+            </article>
+    </form>
+</section>
+{% endblock %}

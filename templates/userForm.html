@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<!--    User Form   -->
+<section id="contact" style="padding-top: 15px; text-align: center;">
+    <div>
+      <h1 style="color: aqua; font-size: 35px; padding-top: 15px;"> User Form </h1>
+    </div>
+    </br>
+   <form method="post" action="{% url 'submitForm' %}"><!-- we use action when we want data at some other url -->
+    {% csrf_token %}
+    {{form}}
+        <div style="margin-right: 1000px;">
+          <!--
+            <label for=""><b> Value1 </b> &emsp;</label>
+            <input type="text" name="num1" value="{{n1}}"/>
+            </br></br>
+            <label for=""><b> Value2 </b> &emsp;</label>
+            <input type="text" name="num2" value="{{n2}}"/>
+            </br></br>
+          -->  
+            <button type="submit" style="width: 170px; background: gold; margin-left: 75px;"> Save </button>
+            </br></br>
+            <label for=""><b> Output </b> &emsp;</label>
+            <input type="text" value="{{output}}"/>
+        </div>
+   </form>
+</section>
+{% endblock %}

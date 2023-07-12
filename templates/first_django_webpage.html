@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {{title}} </title> 
+    <style>
+        .main {
+                width: 100%;
+                background: linear-gradient(90deg, #FF930F 0%, #FFF95B 100%);
+                color: blueviolet;
+                padding: 20px;
+                font-size: 32px;
+                text-align: center;
+        }
+    </style>
+</head>
+<body>
+        <div class = "main"> <b> Welcome to Amshekh Labs pvt ltd </b> </div>
+        </br> </br>
+        {% for n in clist %}
+        <div>{{n}}</div>
+        {% endfor %}
+        </br> </br>
+        <table border="1" cellpadding="10">
+            <tr>
+                <th> Order No </th>
+                <th> Company Name </th>
+                <th> Contact Number </th>
+                <th> Type of Software </th>
+                <th> Estimated Cost </th>
+                <th> Expected delivery </th>    
+            </tr>
+
+            {% for d in client_details %}
+            <tr>
+                <td>{{d.orderno}}</td>  <!-- whatever we want to get print should be in double curly brackets -->
+                <td>{{d.cname}}</td>
+                <td>{{d.contact}}</td>
+                <td>{{d.type}}</td>
+                <td>{{d.ecost}}</td>
+                <td>{{d.edelivery}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        
+        </br></br>
+          {% if numbers|length > 0 %}  <!-- to find the length of list named numbers, also notice there is no spacing between numbers|length -->
+            {% for n in numbers %}
+                {% if n > 20 %}
+                    <div>{{n}}</div>  <!-- Here we are using if endif to print numbers greater than 20 -->
+                {% endif %}
+            {% endfor %}
+          {% else %}
+             No data found  <!-- If there is no element in list numbers print No data found -->
+          {% endif %}  
+</body>
+</html>

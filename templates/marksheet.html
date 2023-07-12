@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+ <!---------------------------------  Marksheet  ------------------------------------------------>
+ <section style="padding-top: 10px; text-align: center;">
+        <div>
+            <h1 style="color: aqua; font-size: 22px; padding-top: 3px;"> Data Science Marksheet 2022 </h1>
+        </div>
+        </br>
+      <form method="post">
+        {% csrf_token %}
+        <article style="margin-right: 1000px;">
+            <label> <b> Machine Learning </b> &emsp;&emsp;&nbsp; </label>
+            <input type="text" name="sub1"/>
+            </br>
+            <label> <b> Python & R Prog. </b> &emsp;&emsp;&ensp; </label>
+            <input type="text" name="sub2"/>
+            </br>
+            <label> <b> SQL|NoQL & MSExcel </b> &nbsp; </label>
+            <input type="text" name="sub3"/>
+            </br>
+            <label> <b> Tableau|Power BI </b> &emsp;&emsp;&ensp; </label>
+            <input type="text" name="sub4"/>
+            </br>
+            <label> <b> Artificial Intelligence </b> &emsp; </label>
+            <input type="text" name="sub5"/>
+            </br></br>
+            <button type="submit" style="width: 170px; margin-left: 175px; background: linear-gradient(90deg, #FF930F 0%, #FFF95B 100%);"> Marksheet </button>
+            </br></br>
+            <label> <b> Total marks </b> &nbsp; </label>
+            <input type="text" name="total" value="{{total}}" style="margin-left: 80px;"/>
+            </br></br>
+            <label> <b> Percentage </b> &nbsp; </label>
+            <input type="text" name="perc" value="{{perc}}" style="margin-left: 80px;"/>
+            </br></br>
+            <label> <b> Divison </b> &emsp; &ensp; </label>
+            <input type="text" name="divison" value="{{divison}}" style="margin-left: 80px;"/>
+        </article>
+      </form>
+ </section>
+ 
+{% endblock %}

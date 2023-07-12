@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section id="calculator" style="padding-top: 15px; text-align: center;">
+    <div>
+        <h1 style="color: aqua; padding-top: 15px; font-size: 35px;"> Calculator </h1>
+    </div>
+    </br>
+    <form method="post">
+        {% csrf_token %}
+        <div style="margin-right: 1000px;">
+            <label> <b> Value 1 </b> &emsp; </label>
+            <input type="text" name="num1" />
+            </br></br>
+            <label> <b> Choose: </b> &ensp;</label>
+            <select name="opr" style="width: 170px; background: gold; padding-left: 68px;">
+                <option value="+"> + </option>
+                <option value="-"> - </option>
+                <option value="*"> * </option>
+                <option value="/"> / </option>
+                <option value="%"> % </option>
+            </select>
+            </br></br>
+            <label> <b> Value 2 </b> &emsp; </label>
+            <input type="text" name="num2" />
+            </br></br>
+            <button type="submit" style="width: 170px; margin-left: 75px; background: linear-gradient(90deg, #FF930F 0%, #FFF95B 100%);"> Calculate </button>
+            </br></br>
+            <label> <b> Output </b> &emsp; </label>
+            <input type="text" value="{{res}}"/>
+        </div>
+    </form>
+</section>
+
+{% endblock %}
